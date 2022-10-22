@@ -6,6 +6,7 @@
 </template>
 <view class="container">
   {{message}}
+  <button bindtap="clickMe">点击我</button>
   <view wx:for="{{array}}"> 
     <view wx:if="{{item == 1}}"> WEBVIEW </view>
     <view wx:elif="{{item == 2}}"> APP </view>
