@@ -64,6 +64,17 @@ Page({
     array: [1, 2, 3, 4, 5],
     staffA: {firstName: 'Hulk', lastName: 'Hu'}
   },
+  tapName1: function(event) {
+    // callback 形式调用
+    // wx.chooseImage({
+    //   success(res) {
+    //     console.log('res:', res)
+    //   }
+    // })
+
+    // promise 形式调用
+    wx.chooseMedia().then(res => console.log('res: ', res)).catch(e=> console.log('e:', e))
+  },
   tapName: function(event) {
     console.log(event)
     wx.navigateTo({url: 'page', events: {
