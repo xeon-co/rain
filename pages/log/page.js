@@ -74,6 +74,13 @@ Page({
       }
     })
   },
+  clickMe2: function(event) {
+    console.log("clickMe2")
+    console.log(event)
+    this.setData({ message: "Hello World" })
+    wx.navigateBack()
+  },
+
   clickMe: function(event) {
     console.log("clickMe")
     console.log(event)

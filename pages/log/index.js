@@ -1,5 +1,6 @@
 // index.js
 var myBehavior = require('./behaviors.js')
+var common = require('common.js')
 Page({
   behaviors: [myBehavior],
   // lifecycle
@@ -47,6 +48,7 @@ Page({
   },
   onTabItemTap(item) {
     // tab 点击时执行
+    common.sayHello('MINA')
     console.log(item.index+ ":"+this.route)
     console.log(item.pagePath+ ":"+this.route)
     console.log(item.text+ ":"+this.route)
