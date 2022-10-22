@@ -2,9 +2,18 @@
 Page({
 
   // lifecycle
-  onLoad: function () {
+  onLoad: function (option) {
     // 小程序启动之后 触发
     console.log("Page onLoad" + ":"+this.route)
+    console.log(option.query)
+    const eventChannel = this.getOpenerEventChannel()
+    // 发送数据给来打开这个页面的
+    eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'});
+    eventChannel.emit('someEvent', {data: 'test'});
+    // 监听传送过来的数据
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log("page acceptDataFromOpenerPage:" + data)
+    })
   },
   onShow: function() {
     // 页面出现在前台时执行
@@ -56,10 +65,23 @@ Page({
   },
   tapName: function(event) {
     console.log(event)
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        console.log(res)
+        var latitude = res.latitude // 纬度
+        var longitude = res.longitude // 经度
+      }
+    })
   },
   clickMe: function(event) {
     console.log("clickMe")
     console.log(event)
     this.setData({ message: "Hello World" })
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
+    })
   }
 })

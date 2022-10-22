@@ -5,7 +5,7 @@ Page({
   // lifecycle
   onLoad: function () {
     // 小程序启动之后 触发
-    console.log("index onLoad"+ ":"+this.route)
+    console.log("index onLoad"+ ":"+this.route + ":" + getCurrentPages())
     const appInstance = getApp()
     console.log("global data:" + appInstance.globalData) // I am global data
   },
@@ -59,6 +59,19 @@ Page({
   },
   tapName: function(event) {
     console.log(event)
+    wx.navigateTo({url: 'page', events: {
+      // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+      acceptDataFromOpenedPage: function(data) {
+        console.log("index acceptDataFromOpenedPage:" + data)
+      },
+      someEvent: function(data) {
+        console.log("index acceptDataFromOpenedPage:" + data)
+      }
+    },
+    success: function(res) {
+      // 通过 eventChannel 向被打开页面传送数据
+      res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+    }})
   },
   clickMe: function(event) {
     console.log("clickMe")
