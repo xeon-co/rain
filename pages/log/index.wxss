@@ -1,1 +1,6 @@
 /**index.wxss**/
+@import "common.wxss";
+.middle-p {
+  padding:15px;
+  text-align: left;
+}
