@@ -1,6 +1,7 @@
 // index.js
+var myBehavior = require('./behaviors.js')
 Page({
-
+  behaviors: [myBehavior],
   // lifecycle
   onLoad: function () {
     // 小程序启动之后 触发
