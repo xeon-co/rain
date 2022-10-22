@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+<view class="container">
+  {{message}}
+  <button bindtap="clickMe">点击我</button>
+  <view wx:for="{{array}}"> 
+    <view wx:if="{{item == 1}}" id="tapTest" data-hi="Weixin" bindtap="tapName"> WEBVIEW clickMe </view>
+    <view wx:elif="{{item == 2}}"> APP </view>
+    <view wx:else>  {{item}}  </view>
+  </view>
+  <template is="staffName" data="{{...staffA}}"></template>
+</view>
