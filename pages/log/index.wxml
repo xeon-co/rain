@@ -4,8 +4,26 @@
     FirstName: {{firstName}}, LastName: {{lastName}}
   </view>
 </template>
+
+<!--wxml-->
+<!-- 下面的 getMax 函数，接受一个数组，且返回数组中最大的元素的值 -->
+<wxs module="m1">
+var getMax = function(array) {
+  var max = undefined;
+  for (var i = 0; i < array.length; ++i) {
+    max = max === undefined ?
+      array[i] :
+      (max >= array[i] ? max : array[i]);
+  }
+  return max;
+}
+
+module.exports.getMax = getMax;
+</wxs>
+
 <view class="container">
   {{message}}
+  <view> {{m1.getMax(array)}} </view>
   <button bindtap="clickMe" class="middle-p">点击我</button>
   <view wx:for="{{array}}"> 
     <view wx:if="{{item == 1}}" id="tapTest" data-hi="Weixin" bindtap="tapName"> WEBVIEW clickMe </view>
