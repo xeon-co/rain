@@ -52,6 +52,11 @@ Page({
     console.log(item.index+ ":"+this.route)
     console.log(item.pagePath+ ":"+this.route)
     console.log(item.text+ ":"+this.route)
+    try {
+      wx.setStorageSync('jacklam', '37')
+    } catch (e) {
+      console.error(e)
+    }
   },
 
   data: {
