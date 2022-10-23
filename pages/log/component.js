@@ -31,6 +31,9 @@ Component({
     // 生命周期函数，可以为函数，或一个在 methods 段中定义的方法名
     attached: function () { 
       console.log("Component attached")
+      this.setUpdatePerformanceListener({withDataPaths: true}, (res) => {
+        console.log("------------" + res)
+      })
     },
     moved: function () { 
       console.log("Component moved")
@@ -41,6 +44,7 @@ Component({
   },
   // 生命周期函数，可以为函数，或一个在 methods 段中定义的方法名
   attached: function () { 
+    
     console.log("Component attached1")
   }, // 此处 attached 的声明会被 lifetimes 字段中的声明覆盖
   ready: function() { 
