@@ -145,6 +145,19 @@ Page({
         })
     }.bind(this))
   },
+
+  tapName6: function(event) {
+      // Worker 最大并发数量限制为 1 个，创建下一个前请用 Worker.terminate() 结束当前 Worker
+      // Worker 内代码只能 require 指定 Worker 路径内的文件，无法引用其它路径
+      // Worker 的入口文件由 wx.createWorker() 时指定，开发者可动态指定 Worker 入口文件
+      // Worker 内不支持 wx 系列的 API
+      // Workers 之间不支持发送消息
+      // Worker 目录内只支持放置 JS 文件，其他类型的静态文件需要放在 Worker 目录外
+    const worker = wx.createWorker('workers/request/index.js') // 文件名指定 worker 的入口文件路径，绝对路径
+    worker.postMessage({
+        msg: 'hello worker'
+      })
+  },
   tapName3: function(event) {
     this.clearAnimation('#tapTest', { opacity: true, rotate: true, backgroundColor:'#FF0000'}, function () {
       console.log("清除了#tapTest opacity 和rotate属性")
