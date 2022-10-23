@@ -41,6 +41,7 @@ module.exports.getMax = getMax;
     <view wx:elif="{{item == 3}}" bindtap="tapName2" style="color:#ff0000;"> 动画 </view>
     <view wx:elif="{{item == 4}}" bindtap="tapName3" style="color:#ff0000;"> 恢复动画 </view>
     <view wx:elif="{{item == 5}}" bindtap="tapName4" style="color:#ff0000;"> 启动更新 </view>
+    <view wx:elif="{{item == 6}}" bindtap="tapName5" style="color:#ff0000;"> 存储 </view>
     <view wx:else>  {{item}}  </view>
   </view>
   <template is="staffName" data="{{...staffA}}"></template>

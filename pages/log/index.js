@@ -76,17 +76,7 @@ Page({
     console.log(item.index+ ":"+this.route)
     console.log(item.pagePath+ ":"+this.route)
     console.log(item.text+ ":"+this.route)
-    try {
-      /* 同一个微信用户，同一个小程序 storage 上限为 10MB。storage 以用户维度隔离，同一台设备上，A 用户无法读取到 B 用户的数据；不同小程序之间也无法互相读写数据。
-
-      插件隔离策略
-
-      同一小程序使用不同插件：不同插件之间，插件与小程序之间 storage 不互通。
-      不同小程序使用同一插件：同一插件 storage 不互通。 */
-      wx.setStorageSync('jacklam', '37')
-    } catch (e) {
-      console.error(e)
-    }
+    
   },
 
   data: {
@@ -139,6 +129,32 @@ Page({
       // 新版本下载失败
       console.log("onUpdateFailed")
     })
+  },
+  tapName5: function(event) {
+    try {
+      /* 同一个微信用户，同一个小程序 storage 上限为 10MB。storage 以用户维度隔离，同一台设备上，A 用户无法读取到 B 用户的数据；不同小程序之间也无法互相读写数据。
+
+      插件隔离策略
+
+      同一小程序使用不同插件：不同插件之间，插件与小程序之间 storage 不互通。
+      不同小程序使用同一插件：同一插件 storage 不互通。 */
+      wx.setStorageSync('jacklam', '38')
+      // 在本地用户文件目录下创建一个文件 hello.txt，写入内容 "hello, world"
+      const fs = wx.getFileSystemManager()
+      fs.saveFile({
+        tempFilePath: 'test.txt', // 传入一个本地临时文件路径
+        success(res) {
+          console.log(res.savedFilePath) // res.savedFilePath 为一个本地缓存文件路径
+        }
+      })
+      console.log('local path:  ${wx.env.USER_DATA_PATH}/hello.txt')
+      fs.writeFileSync('${wx.env.USER_DATA_PATH}/hello.txt',  "hello, world", "utf8")
+
+      
+
+    } catch (e) {
+      console.error(e)
+    }
   },
   tapName1: function(event) {
     // callback 形式调用
