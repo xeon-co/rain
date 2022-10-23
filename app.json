@@ -10,7 +10,8 @@
           "name": "pack2",
           "pages": [
             "pages/log/page"
-          ]
+          ],
+          "independent": true
         }
       ],
     "window": {
