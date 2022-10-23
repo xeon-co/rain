@@ -17,13 +17,15 @@ Component({
     }
   },
   options: {
-    multipleSlots: true // 在组件定义时的选项中启用多 slot 支持
+    multipleSlots: true, // 在组件定义时的选项中启用多 slot 支持
+    pureDataPattern: /^_/ // 指定所有 _ 开头的数据字段为纯数据字段
   },
   data: {
     text: "page data.",
     numberA: 1,
     numberB: 2,
-    sum:0
+    sum:0,
+    _d: true, // 纯数据字段
   },
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在 methods 段中定义的方法名

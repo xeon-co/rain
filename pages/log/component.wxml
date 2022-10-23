@@ -1,3 +1,3 @@
 <slot name="before"></slot>
-<view bindtap="viewTap">正在加载{{text}} {{innerText}}{{sum}}</view>
+<view bindtap="viewTap">正在加载{{text}} {{innerText}}{{sum}}{{_d}}</view>
 <slot></slot>
