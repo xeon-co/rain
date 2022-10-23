@@ -24,7 +24,10 @@ module.exports.getMax = getMax;
 </wxs>
 -->
 <view wx:if="{{loading}}">正在加载</view>
-<component-tag-name inner-text="Some text"></component-tag-name>
+<component-tag-name inner-text="Some text">
+  <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+  <view>这里是插入到组件 slot 中的内容</view>
+</component-tag-name>
 <view class="container">
   {{message}}
   <include src="include.wxml"></include>

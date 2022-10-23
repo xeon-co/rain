@@ -1,1 +1,2 @@
 <view>正在加载{{text}} {{innerText}}</view>
+<slot></slot>
