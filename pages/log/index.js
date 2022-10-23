@@ -77,6 +77,12 @@ Page({
     console.log(item.pagePath+ ":"+this.route)
     console.log(item.text+ ":"+this.route)
     try {
+      /* 同一个微信用户，同一个小程序 storage 上限为 10MB。storage 以用户维度隔离，同一台设备上，A 用户无法读取到 B 用户的数据；不同小程序之间也无法互相读写数据。
+
+      插件隔离策略
+
+      同一小程序使用不同插件：不同插件之间，插件与小程序之间 storage 不互通。
+      不同小程序使用同一插件：同一插件 storage 不互通。 */
       wx.setStorageSync('jacklam', '37')
     } catch (e) {
       console.error(e)
