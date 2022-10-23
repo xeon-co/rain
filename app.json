@@ -4,6 +4,15 @@
         "pages/log/index",
         "pages/log/page"
     ],
+    "subpackages": [
+        {
+          "root": "packageA",
+          "name": "pack2",
+          "pages": [
+            "pages/log/page"
+          ]
+        }
+      ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#000",
