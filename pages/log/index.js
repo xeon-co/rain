@@ -21,6 +21,11 @@ Page({
       console.log("scrollOffset scrollTop:"+ res.scrollTop+  ":"+this.route + ":" + getCurrentPages())
     })
     query.exec()
+
+    var prevExitState = this.exitState // 尝试获得上一次退出前 onSaveExitState 保存的数据
+    if (prevExitState !== undefined) { // 如果是根据 restartStrategy 配置进行的冷启动，就可以获取到
+      prevExitState.myDataField === 'myData' 
+    }
   },
   onShow: function() {
     // 页面出现在前台时执行
@@ -57,6 +62,13 @@ Page({
   onResize: function() {
     // 页面尺寸变化时执行
     console.log("index onResize"+ ":"+this.route)
+  },
+  onSaveExitState: function() {
+    var exitState = { myDataField: 'myData' } // 需要保存的数据
+    return {
+      data: exitState,
+      expireTimeStamp: Date.now() + 24 * 60 * 60 * 1000 // 超时时刻
+    }
   },
   onTabItemTap(item) {
     // tab 点击时执行
