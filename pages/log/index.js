@@ -9,6 +9,17 @@ Page({
     console.log("index onLoad"+ ":"+this.route + ":" + getCurrentPages())
     const appInstance = getApp()
     console.log("global data:" + appInstance.globalData) // I am global data
+
+    const query = wx.createSelectorQuery()
+    query.select('#tapTest').boundingClientRect(function(res){
+      res.top // #the-id 节点的上边界坐标（相对于显示区域）
+      console.log("boundingClientRect top:"+ res.top+  ":"+this.route + ":" + getCurrentPages())
+    })
+    query.selectViewport().scrollOffset(function(res){
+      res.scrollTop // 显示区域的竖直滚动位置
+      console.log("scrollOffset scrollTop:"+ res.scrollTop+  ":"+this.route + ":" + getCurrentPages())
+    })
+    query.exec()
   },
   onShow: function() {
     // 页面出现在前台时执行
@@ -63,6 +74,24 @@ Page({
     message: 'Hello MINA!',
     array: [1, 2, 3, 4, 5],
     staffA: {firstName: 'Hulk', lastName: 'Hu'}
+  },
+  tapName2: function(event) {
+    this.animate('#tapTest', [
+      { opacity: 1.0, rotate: 0, backgroundColor: '#FF0000' },
+      { opacity: 0.5, rotate: 45, backgroundColor: '#00FF00'},
+      { opacity: 0.0, rotate: 90, backgroundColor: '#FF0000' },
+      ], 5000, function () {
+        this.clearAnimation('#tapTest', { opacity: true, rotate: true }, function () {
+          console.log("清除了#tapTest opacity 和rotate属性")
+          
+        })
+    }.bind(this))
+  },
+  tapName3: function(event) {
+    this.clearAnimation('#tapTest', { opacity: true, rotate: true, backgroundColor:'#FF0000'}, function () {
+      console.log("清除了#tapTest opacity 和rotate属性")
+     
+    })
   },
   tapName1: function(event) {
     // callback 形式调用
