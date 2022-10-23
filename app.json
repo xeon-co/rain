@@ -14,6 +14,13 @@
           "independent": true
         }
       ],
+
+      "preloadRule": {
+        "pages/log/page": {
+          "network": "all",
+          "packages": ["packageA"]
+        }
+      },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#000",
