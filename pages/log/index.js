@@ -1,6 +1,7 @@
 // index.js
 var myBehavior = require('./behaviors.js')
 var common = require('common.js')
+
 Page({
   behaviors: [myBehavior],
   // lifecycle
@@ -73,6 +74,7 @@ Page({
   data: {
     message: 'Hello MINA!',
     array: [1, 2, 3, 4, 5],
+    loading: true,
     staffA: {firstName: 'Hulk', lastName: 'Hu'}
   },
   tapName2: function(event) {

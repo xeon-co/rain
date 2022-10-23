@@ -23,6 +23,7 @@ var getMax = function(array) {
 module.exports.getMax = getMax;
 </wxs>
 -->
+<view wx:if="{{loading}}">正在加载</view>
 <view class="container">
   {{message}}
   <include src="include.wxml"></include>

@@ -9,7 +9,8 @@
         "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "Rain英语",
         "navigationBarTextStyle": "white",
-        "pageOrientation": "landscape"
+        "pageOrientation": "portrait",
+        "restartStrategy": "homePage"
     },
     "tabBar": {
       "list": [{
