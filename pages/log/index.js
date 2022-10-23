@@ -26,6 +26,35 @@ Page({
     if (prevExitState !== undefined) { // 如果是根据 restartStrategy 配置进行的冷启动，就可以获取到
       prevExitState.myDataField === 'myData' 
     }
+
+    // 页面创建时执行
+    console.log("-----onLoad-------")
+    const query2 = wx.createSelectorQuery()
+  query2.select('#myCanvas')
+    .fields({ node: true, size: true })
+    .exec((res) => {
+      console.log("-----createSelectorQuery-------")
+      console.log(res)
+      const canvas = res[0].node
+      const ctx = canvas.getContext('2d')
+
+      const dpr = wx.getSystemInfoSync().pixelRatio
+      canvas.width = res[0].width * dpr
+      canvas.height = res[0].height * dpr
+      ctx.scale(dpr, dpr)
+        // 清空画布
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.fillRect(0, 0, 100, 100)
+
+        // 绘制红色正方形
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+
+        // 绘制蓝色半透明正方形
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect(130, 130, 150, 150);
+    })
+   
   },
   onShow: function() {
     // 页面出现在前台时执行

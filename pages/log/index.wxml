@@ -31,6 +31,8 @@ module.exports.getMax = getMax;
   <view slot="before">这里是插入到组件slot name="before"中的内容</view>
 </component-tag-name>
 <view class="container">
+  <!-- 2d 类型的 canvas -->
+  <canvas id="myCanvas" type="2d" style="border: 1px solid; width: 300px; height: 150px;" />
   {{message}}
   <include src="include.wxml"></include>
   <view> {{m1.getMax(array)}} </view>
