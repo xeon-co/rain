@@ -24,6 +24,7 @@ module.exports.getMax = getMax;
 </wxs>
 -->
 <view wx:if="{{loading}}">正在加载</view>
+<component-tag-name inner-text="Some text"></component-tag-name>
 <view class="container">
   {{message}}
   <include src="include.wxml"></include>
