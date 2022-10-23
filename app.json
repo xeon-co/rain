@@ -12,6 +12,7 @@
         "pageOrientation": "portrait",
         "restartStrategy": "homePage"
     },
+    "lazyCodeLoading": "requiredComponents",
     "tabBar": {
       "list": [{
         "pagePath": "pages/index/index",
