@@ -9,7 +9,7 @@ Page({
     // 小程序启动之后 触发
     console.log("index onLoad"+ ":"+this.route + ":" + getCurrentPages())
     const appInstance = getApp()
-    console.log("global data:" + appInstance.globalData) // I am global data
+    console.log("global data:" + appInstance.globalData.text) // I am global data
 
     const query = wx.createSelectorQuery()
     query.select('#tapTest').boundingClientRect(function(res){

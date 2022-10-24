@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/log/index",
-        "pages/log/page"
+        "pages/log/page",
+        "selfcashiers/pages/index/index",
+        "parking/pages/index/index"
     ],
     "subpackages": [
         {
