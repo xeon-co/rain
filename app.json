@@ -34,7 +34,7 @@
     "workers": "workers",
     "lazyCodeLoading": "requiredComponents",
     "tabBar": {
-     "custom": true,
+    
       "list": [{
         "pagePath": "pages/index/index",
         "text": "首页"

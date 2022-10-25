@@ -2,25 +2,41 @@
 .pageContainer {
   width: 100vw;
   height: 100vh;
-  display: -webkit-flex;
   display: flex;
+  /** row 默认为从左到右的排序
+      row-reverse 为从右到左的排序
+      column 为从上到下的排序
+      column-reverse 为从下到上的排序 **/
   flex-direction: column;
+  /**
+    flex-wrap 用于控制换行
+    其默认值为 nowrap 即不换行
+    wrap 为对其进行换行.
+  **/
+  flex-wrap: wrap;
+  /**
+  justify-content: flex-start 效果如下 , 默认为左对齐
+  justify-content: flex-end 右对齐
+  justify-content: center 居中对齐
+  justify-content: space-around 在成员元素周围包裹空白
+  justify-content: space-between 在成员元素之间留空白
+  **/
   justify-content: center;
   align-items: center;
 }
 
 .selfcashiersButton {
-  width: 200px;
-  height:50px;
-  background-color: white;
+  width: 200rpx;
+  height:50rpx;
+  background-color: black;
 }
 
 .separatorView {
-  height:30px;
+  height:30rpx;
 }
 
 .parkingButton {
-  width: 200px;
-  height:50px;
+  width: 200rpx;
+  height:50rpx;
   background-color: white;
 }
