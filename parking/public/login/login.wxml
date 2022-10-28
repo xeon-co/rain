@@ -1,0 +1,18 @@
+<!--弹窗-->
+<view hidden='{{modalHidden}}'>  
+  <view class='mask_layer' />
+  <view class='modal_box'> 
+    <view class="title">{{modalMsg.tit}}</view>
+    <view class='content'>  
+      <text class='modalMsg'>{{modalMsg.content}}</text>  
+      <text class='modalMsg_sec'>{{modalMsg.content_secMsg}}</text>  
+    </view>  
+    <view class='btn'>  
+      <!-- <view bindtap='modal_click_Hidden' class='cancel'>{{modalMsg.btn}}</view> -->
+      <button class='cancel noBor' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{modalMsg.btn}}</button>   
+      <!-- <view bindtap='Sure' class='Sure'>查看</view>   -->
+    </view>
+    <!-- Loading方法 -->
+    <loading hidden="{{hiddenLoading}}">登录中...</loading>
+  </view> 
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SingleModal": "../../public/components/SingleModal/SingleModal" 
+  },
+  "component": true
+}
