@@ -3,10 +3,10 @@ const config = require("./config.js");
 var apiHost = null;
 if (config.isTestMode) {
   // 测试地址
-  apiHost = "https://sit-api.tianhong.cn";
+  apiHost = "https://sit-api.X.cn";
 } else {
   // 正式地址
-  apiHost = "https://sit-api.tianhong.cn";
+  apiHost = "https://sit-api.X.cn";
 }
 module.exports.apiHost = apiHost;
 // 计时器
