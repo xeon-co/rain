@@ -1,0 +1,15 @@
+<!-- 弹窗 -->
+<view hidden='{{modalHidden}}'>  
+  <view class='mask_layer' />  
+  <view class='modal_box'>  
+    <!-- <view class="title">提示</view>   -->
+    <view class='content'>  
+      <text class='modalMsg'>{{modalMsg.content}}</text>  
+    </view>  
+    <view class='btn'>  
+      <!-- <view bindtap='modal_click_Hidden' class='cancel'>{{modalMsg.btn}}</view> -->
+      <button class='cancel noBor' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{modalMsg.btn}}</button>   
+      <!-- <view bindtap='Sure' class='Sure'>查看</view>   -->
+    </view>  
+  </view>  
+</view>  
