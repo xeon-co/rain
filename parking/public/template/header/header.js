@@ -1,4 +1,4 @@
-// parking/pages/index/index.js
+// parking/public/template/header/header.js
 Page({
 
   /**

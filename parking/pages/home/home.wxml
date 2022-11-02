@@ -1,0 +1,14 @@
+<view class="page">
+<!--调用login组件-->
+<Login modal-hidden="{{is_modal_Hidden}}" modal-msg="{{is_modal_Msg}}"/> 
+ <!-- 头部 -->
+ <import src="../../public/template/header/header.wxml"/> 
+ <template is="header" data="{{data}}"/>
+ <!-- 输入车牌框 -->
+ <text class='areaTit'>请点击方框输入您的车牌</text>
+ <view class="inputBox">
+  <view class='areaBox' 
+  style='border:{{InputArea.border}};border-right:{{InputArea.borRight}};border-radius:6px 0 0 6px'   bindtap="areaIn">{{whichArea}}</view>
+  <view class='middleLine' style="{{showMiddleLine?'border:none':'border-left:1px solid #999'}}"></view>
+ </view>
+</view>

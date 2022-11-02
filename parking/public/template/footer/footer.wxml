@@ -1,0 +1,10 @@
+<template name="footer">
+  <view>
+    <view class='line'></view>
+    <view class='lineWord'>
+      <text>注意事项</text>
+    </view>
+    <view class='actionWord'>1.临停车缴费后请在免费出场时间内离场，超时需补缴停车费；</view>
+    <view class='actionWord'>2.临牌、特殊车牌及车牌识别有误的车辆，请到人工收费处缴费，谢谢。</view>
+  </view>
+</template>

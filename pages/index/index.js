@@ -17,7 +17,7 @@ Page({
       console.log(res)
     })
     wx.navigateTo({
-      url: "/parking/pages/index/index",
+      url: "/parking/pages/home/home",
     })
   },
 })

@@ -1,0 +1,271 @@
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.page{
+  background: white;
+  height: 100%;
+  overflow: hidden;
+}
+.head{
+  width:100%;
+    height:120px;
+    background:-webkit-gradient(linear, 0 0, right bottom, from(#ff7e5e), to(#fe473c));  
+}
+.whiteCol{
+  color: white;
+}
+.font14{
+  font-size: 14px;
+}
+.p20{
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+.mt20{
+  margin-top: 20rpx;
+}
+.inputAreaSty{
+  width:10rpx;
+  height:60rpx;
+  float:left;
+  margin:-6rpx 0rpx;
+  padding:2px 30rpx!important;
+}
+.inputNumSty{
+  width: 70rpx;
+  height: 73rpx; 
+  line-height: 40px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  float: left;
+  margin: 0 1px; 
+  /* padding:10rpx 30rpx!important; */
+}
+.postS3{
+  position: relative;
+  top: -3px;
+}
+.font18rpx{
+  font-size: 18rpx;
+}
+.inputBox{
+  width: 650rpx;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+.areaBox{
+  border: 1px solid #999;
+  width: 75rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  float: left;
+  border-radius: 6px;
+  /* padding-top: 8rpx; */
+  box-sizing: border-box
+}
+.middleLine{
+  width: 0rpx;
+  height: 40rpx;
+  margin-top: 18rpx;
+  border-left: 1rpx solid #999;
+  float: left;
+}
+.separator{
+  height: 73rpx;
+  line-height: 73rpx;
+  float:left;
+  font-size: 45px;
+  /* line-height: 40px; */
+  /* margin-top: -40rpx; */
+}
+.areaTit{
+  width: 100%;
+}
+.areaTit{
+  margin: 30rpx 0 30rpx 58rpx;
+  display: block;
+  color:#999
+}
+.font18{
+  font-size: 18px;
+}
+.font12{
+  font-size: 12px;
+}
+.wid20{
+  width: 20px;
+}
+.grayCol{
+  color: #999
+}
+.addInput{
+  width: 74rpx;
+  height: 74rpx;
+  float:left;
+  display: inline-block;
+  border: 1px dotted #999;
+  border-radius: 6px;
+  /* background: url(../../image/); */
+  margin: 0 1px;
+}
+.addFn{
+  width: 650rpx;
+  margin: 50rpx auto;
+  height: 80rpx;
+  line-height: 82rpx;
+  background:#fe7870;
+  text-align: center;
+  color:#feb0ab;
+  border-radius: 20px;
+}
+.line{
+  width: 85%;
+  height: 1px;
+  background: #ccc;
+  margin: 0 auto;
+}
+.lineWord{
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin-top: -20rpx;
+}
+.lineWord text{
+  background: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+  color:#999;
+}
+.actionWord{
+  width: 85%;
+  font-size: 14px;
+  color:#999;
+  margin: 25rpx auto;
+}
+.outFrame{
+  width: 100%;
+  height: 680rpx;
+  position: absolute;
+  bottom: -680rpx;
+  background: #f6f6f6;
+}
+.topArea{
+  width: 100%;
+  height: 70rpx;
+  background: white;
+  text-align:right;
+  padding-right:20rpx;
+  box-sizing: border-box;
+  color:#fe473c;
+  font-size:14px;
+  border-top:1px solid #ccc;
+  line-height: 70rpx;
+  overflow: hidden;
+}
+.choseArea{
+  width:100%;
+  height: 600rpx;
+  overflow:hidden; 
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+    padding: 10rpx;  
+  /* box-sizing: border-box; */
+}
+.choseArea li{
+  list-style: none;
+  width: 105rpx;  
+  height: 65rpx;
+  text-align: center;
+  line-height: 65rpx;
+  float: left;
+  background: white;
+  margin:10rpx 10rpx;
+  /* flex: 12%; */
+}
+/* .choseArea li:first-child{
+  margin-left: 20rpx;
+}*/
+.choseArea li:last-child{
+  flex: 14%;  
+  flex-grow: 0
+}
+.deleteBtn{
+  width: 228rpx;
+  height: 65rpx;
+  background: white;
+  position: absolute;
+  right: 20rpx;
+  bottom: 60rpx;
+}
+.animation-element-wrapper {
+  display: flex;
+  width: 100%;
+  padding-top: 150rpx;
+  padding-bottom: 150rpx;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.animation-element {
+  /* width: 200rpx;
+  height: 200rpx; */
+  /* background-color: #1AAD19; */
+}
+.animation-buttons {
+  padding: 30rpx 50rpx 10rpx;
+  width: 100%;
+  height: 600rpx;
+  box-sizing: border-box;
+}
+.animation-button {
+  float: left;
+  line-height: 2;
+  width: 300rpx;
+  margin: 15rpx 12rpx;
+}
+
+.animation-button-reset {
+  width: 620rpx;
+}
+.asleepBtn{
+  background: #fe7870;
+  color: #feb0ab;
+}
+.activedBtn{
+  background: #fe473c;
+  color: #fff;
+}
+.newSty{
+  height: 75rpx;
+  line-height: 75rpx;
+}
+.wid18{
+  width: 18px;
+  height: 18px;
+}
+.wid35hei28{
+  width: 70rpx;
+  height: 60rpx;
+  position: relative;
+  top: 3rpx;
+}
+.textCenter{
+  text-align: center;
+}
+.unCli{
+  background: #ccc;
+  color:white;
+}
+.history{
+  width: 650rpx;
+  margin: 0 auto;
+  margin-top:-27rpx;
+  margin-bottom: 70rpx;
+}
+.history text{
+  margin-right: 50rpx;
+}

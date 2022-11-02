@@ -1,0 +1,7 @@
+<!-- 头部 -->
+<template name="header">
+    <view class='head whiteCol font14 p20'>
+      <view>智慧停车</view>
+      <view class='mt20'>{{data}}</view>
+    </view>
+</template>

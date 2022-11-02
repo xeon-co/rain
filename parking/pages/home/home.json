@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "停车缴费",
+  "usingComponents": {
+    "Login": "../../public/login/login"
+  }
+}

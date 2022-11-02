@@ -1,53 +1,59 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/log/index",
-        "pages/log/page",
-        "selfcashiers/pages/index/index",
-        "parking/pages/index/index"
-    ],
-    "subpackages": [
-        {
-          "root": "packageA",
-          "name": "pack2",
-          "pages": [
-            "pages/log/page"
-          ],
-          "independent": true
-        }
+  "pages": [
+    "pages/index/index",
+    "pages/log/index",
+    "pages/log/page",
+    "selfcashiers/pages/index/index",
+    "parking/pages/home/home",
+    "parking/public/template/footer/footer",
+    "parking/public/template/header/header"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "name": "pack2",
+      "pages": [
+        "pages/log/page"
       ],
-
-      "preloadRule": {
-        "pages/log/page": {
-          "network": "all",
-          "packages": ["packageA"]
-        }
-      },
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "Rain英语",
-        "navigationBarTextStyle": "white",
-        "pageOrientation": "portrait",
-        "restartStrategy": "homePage"
-    },
-    "workers": "workers",
-    "lazyCodeLoading": "requiredComponents",
-    "tabBar": {
-      "custom": true,
-      "list": [{
+      "independent": true
+    }
+  ],
+  "preloadRule": {
+    "pages/log/page": {
+      "network": "all",
+      "packages": [
+        "packageA"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Rain英语",
+    "navigationBarTextStyle": "white",
+    "pageOrientation": "portrait",
+    "restartStrategy": "homePage"
+  },
+  "workers": "workers",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页"
-      }, {
+      },
+      {
         "pagePath": "pages/log/index",
         "text": "日志"
-      }]
-    },
-    "networkTimeout": {
-      "request": 10000,
-      "downloadFile": 10000
-    },
-    "debug": true,
-    "style": "v2",
-    "sitemapLocation": "sitemap.json"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }
