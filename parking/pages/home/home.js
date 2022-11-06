@@ -878,15 +878,16 @@ Page({
         'carCode': 'HLJ51A56647',
       }
       post(api.addCar, data).then((res) => {
+        console.log("response:"+api.addCar);//正确返回结果
         console.log(res);//正确返回结果
         if (res.data.code == 200) {
-          // 非虹领巾用户
+          // 非用户
           if (res.data.data.memberId == 0) {
             wx.setStorage({
               key: 'carCode',
               data: carCode
             });
-            // 虹领巾用户
+            // 用户
           } else {
             wx.setStorage({
               key: 'carCode',
@@ -907,7 +908,11 @@ Page({
         this.setData({
           hiddenLoading: true
         })
-      }).catch((errMsg) => {
+      })
+      .catch((errMsg) => {
+        wx.showToast({
+          title: errMsg,
+        })
         console.log(errMsg);//错误提示信息
         // 关闭loading方法
         this.setData({
