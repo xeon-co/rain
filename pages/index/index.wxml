@@ -1,7 +1,8 @@
 <!--index.wxml-->
 <view class="pageContainer">
   <button class="selfcashiersButton" catchtap="selfcashiersButtonTapped">自助买单1</button>
-  <view class="separatorView"></view>
+  <view class="separatorView">
+  </view>
   <!-- catchtap  ：不会冒泡到父元素上，阻止事件冒泡  bindtap  ：子元素使用bindtap绑定事件后，执行的时候，会冒泡到父元素 -->
   <button class="parkingButton" catchtap="parkingButtonTapped">智慧停车</button>
 </view>

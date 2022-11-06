@@ -6,7 +6,8 @@
     "selfcashiers/pages/index/index",
     "parking/pages/home/home",
     "parking/public/template/footer/footer",
-    "parking/public/template/header/header"
+    "parking/public/template/header/header",
+    "parking/pages/detail/detail"
   ],
   "subpackages": [
     {

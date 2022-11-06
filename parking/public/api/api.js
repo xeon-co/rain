@@ -1,5 +1,5 @@
 const appInstance = getApp();
-const publicApi = 'https://sit-api2.X.cn'
+const publicApi = 'https://sit-api.x.cn'
 // header
 const header = {
   Post:{
@@ -30,17 +30,24 @@ const api = {
 const post = function(url, data){
   header.Post['x-http-token'] = wx.getStorageSync('token');
   header.Get['x-http-token'] = wx.getStorageSync('token');
+  console.log("request url:"+ url + " start")
+  console.log("header start")
   console.log(header)
+  console.log("header end")
   // 主要包装了处理，然后可以用then方式链式调用
+  console.log("promise start")
   var promise = new Promise((resolve,reject)=>{
     var that = this;
     var postData = data;
+    console.log("wx request" + " url:"+ url)
     wx.request({
       url: url,
       data:postData,
       method:'POST',
       header:header.Post,
       success:function(res){
+        console.log("response"+ " url:"+ url)  
+        console.log(res)
         console.log(res.data.code)  
         // token失效
         if(res.data.code == '200'){
@@ -68,15 +75,20 @@ const post = function(url, data){
         else{
           reject(res);
         }
+
+        console.log("request url:"+ url + " end")
       },
       error:function(e){
         reject('网络出错');
+        console.log("request url:"+ url + " end")
       },
       complete:function(e){
 
       }
     })
   });
+
+  console.log("promise end");
   return promise;
 }
 

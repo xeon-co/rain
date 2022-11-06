@@ -6,7 +6,7 @@ Component({
   properties: {
     modalHidden: {
       type: Boolean,
-      value: true
+      value: false
     }, //这里定义了modalHidden属性，属性值可以在组件使用时指定.写法为modal-hidden  
     modalMsg: {
       type: Object,
@@ -50,6 +50,7 @@ Component({
         wxLogin: function () {
           wx.login({
             success: function (res) {
+              console.log("login")
               console.log(res)
               if (res.errMsg == "login:ok"){
                 wx.setStorage({
@@ -69,6 +70,7 @@ Component({
               }
             },
             fail: function (failres) {
+              console.log("wx login fail")
               console.log(failres)
               // 关闭loading方法
               _this.setData({
@@ -87,21 +89,26 @@ Component({
             'phoneNumberEncryptedData': wx.getStorageSync('phoneNumberEncryptedData'),
             'phoneNumberIv': wx.getStorageSync('phoneNumberIv')
           };
-          console.log("request data:")
+          console.log("request data:" + api.login)
           console.log(data)
           post(api.login, data).then((res) => {
+            console.log("0:");//正确返回结果
             console.log(res);//正确返回结果
             // 登录成功，隐藏登录框
+            console.log("1:");//正确返回结果
             _this.setData({
               modalHidden: true
             });
+            console.log("2:");//正确返回结果
             // 保留token
+            console.log("token:"+res.data.token);//正确返回结果
             wx.setStorage({
               key: 'token',
-              data: res.data.data.token
+              data: res.data.token
             });
             // 非200情况
           }).catch((res) => {
+            console.log("login error");
             wx.showModal({
               title: '登录失败',
               content: String(res.data.message)

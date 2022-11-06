@@ -10,5 +10,47 @@
   <view class='areaBox' 
   style='border:{{InputArea.border}};border-right:{{InputArea.borRight}};border-radius:6px 0 0 6px'   bindtap="areaIn">{{whichArea}}</view>
   <view class='middleLine' style="{{showMiddleLine?'border:none':'border-left:1px solid #999'}}"></view>
+  <view class='areaBox' style='border:{{InputWord.border}};border-left:{{InputWord.borLeft}};border-radius:0 6px 6px 0;margin-left:-2rpx' bindtap="wordIn">{{whichWord}}</view>    
+    <text class='separator'>·</text>  
+    <div class='inputNumSty' type='text' value='{{item.val}}' wx:for="{{InputNum}}" wx:for-index='key' data-key="{{key}}" bindtap="numInput" style="border:{{item.border}}">{{item.val}}</div>
+    <view class='addInput'  style='border:{{InputNew.border}};' bindtap="addInput">
+
+      <view class='newSty' wx:if="{{whichNew}}">
+         {{whichNew}} 
+      </view>
+      <view wx:else>
+        <view class='font18 grayCol'>+</view>
+        <view class='font18rpx grayCol postS3'>新能源</view>
+      </view>
+    </view>
  </view>
+  <!-- 确定添加 -->
+  <view  bindtap="addFn" class='{{addStatus}} addFn'>确定添加</view>
+ 
+ <!-- 用户车牌历史记录 -->
+ <view class='history'>
+    <text class='font12 grayCol' bindtap='setInfield' data-val="粤D·2877H" hidden='{{codeHistoryHidden}}'>粤D·2877H</text>
+    <text class='font12 grayCol' bindtap='setInfield' data-val="粤D·22386" hidden='{{codeHistoryHidden}}'>粤D·22386</text>
+    <text class='font12' bindtap='clearHistory' hidden='{{codeHistoryHidden}}'>清除历史</text>
+  </view>
+
+   <!-- 注意事项 -->
+  <import src="../../public/template/footer/footer.wxml"/>
+  <template is="footer"/>
+
+   <!-- 自定义输入框 -->
+   <view class='outFrame animation-element' style="bottom:{{out}}" animation="{{animation}}">
+    <view class='topArea' bindtap="downFrame">关闭</view>
+    <view class="choseArea">
+        <li wx:for="{{pickerArr}}">
+          <view class='unCli' wx:if="{{pickerArr.length == 40 && (item.name == 'I' || item.name == 'O')}}"  data-val="{{item.name}}" data-code='{{item.key}}' data-type="">
+            {{item.name}}
+          </view>
+          <view wx:else  bindtap="pickerFn"  data-val="{{item.name}}" data-code='{{item.key}}' data-type="">
+            {{item.name}}
+          </view>
+        </li>
+    </view>
+    <view class='deleteBtn textCenter' style='bottom:{{deleteBottom}}' bindtap="deleteFn"><image class='wid35hei28' src='../../image/icon_keyboard_delete.png'></image></view>
+  </view>
 </view>
