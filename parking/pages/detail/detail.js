@@ -5,7 +5,51 @@ Page({
    * 页面的初始数据
    */
   data: {
+    carInfo:[{carCode:"123456", storeName:"君尚", 
+    parkRule:[{msg:"123"}, {msg:"1234"},{msg:"12345"}]},
+    {carCode:"123456", storeName:"宝体", 
+    parkRule:[{msg:"123"}, {msg:"1234"},{msg:"12345"}]}],
+    hour:["2","0"],
+    min:["56","00"],
+    // 控制优惠弹窗弹出参数
+    actionSheetHidden:true,
+    // 控制客服电话弹窗弹出参数
+    phoneHidden:true,
+    // 优惠列表数组
+    preferentialArr:[],
+    // 当前处于第几辆车
+    priceIndex:0,
+    // 
+    noParking:true
 
+  },
+
+  // 每次滑动结束
+  swiperFinish:function(e){
+    // console.log(e)
+    switch (e.detail.current){
+      case 0:
+        console.log('000')
+        // 设置当前车辆应缴费
+        this.setData({
+          priceIndex:0
+        })
+      break;
+      case 1:
+        console.log('111')
+        // 设置当前车辆应缴费
+        this.setData({
+          priceIndex: 1,
+        })
+      break;
+      case 2:
+        console.log('222')      
+        // 设置当前车辆应缴费
+        this.setData({
+          priceIndex: 2
+        })
+      break;
+    }
   },
 
   /**

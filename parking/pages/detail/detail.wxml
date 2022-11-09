@@ -1,4 +1,53 @@
 <!--parking/pages/detail.wxml-->
 <view class='page'>
+   <!-- 车牌 -->
+   <view class='plateNum textCenter mtb30'>
+      <view class='wid33p inlineBlock' wx:for='{{carInfo}}' wx:for-index='key'>
+        <view wx:if="{{priceIndex == key}}">
+          <image class='wid16 posT3' src="../../image/icon_licenseplate_red.png"></image><text class='posL3 redCol'>{{item.carCode}}</text>
+          <view class='dLine'></view>
+        </view>
+        <view wx:else>
+          <image class='wid16 posT3' src="../../image/icon_licenseplate_gray.png"></image><text class='posL3 grayCol'>{{item.carCode}}</text>
+          <!-- <view class='dLine'></view> -->
+        </view>
+      </view>
+    </view>
 
+    <swiper duration="500" bindchange="swiperFinish">
+      <swiper-item wx:for="{{carInfo}}"  wx:for-index='key'>
+      <!-- 时长 -->
+      <view class='textCenter mtb30'><text class='font80rpx mlr10'>{{hour[key]}}</text>时<text class='font80rpx mlr10'>{{min[key]}}</text>分</view>
+          <!-- 简述 -->
+          <view class='textCenter mtb30 font12'>{{item.storeName}}{{item.parkRule[2].msg == null?'':item.parkRule[2].msg}}<image hidden='{{item.parkRule[2].msg == null?true:false}}' class='wid16 mtl5' src='../../image/icon_line_help_gray.png'></image></view>
+          <!-- 优惠 -->
+          <view class='mtb30 font12'>
+            <view class='halfWid textCenter'  wx:for="{{validDiscount[priceIndex]}}">
+            优惠折扣：
+            <text wx:if="item.isCheck == 1">{{item.discount}}</text>
+            <text wx:else>0</text>
+            元
+            </view>
+            <view class='halfWid textCenter redCol' bindtap='couponModalFn'>授权登陆后可享受优惠<image class='wid14 mt4' src="../../image/icon_extended_red.png"></image></view>
+          </view>
+          <!-- 详细 -->
+          <view class='mtb60 mb30'>
+            <view class='Wid48p textCenter'>
+              <view class='grayCol font12 pl50'>应缴费</view>
+              <view class='font30 pl50'>{{item.parkPrice}}</view>
+            </view>
+            <view class='inlineBlock wid10p hei30'>
+              <view class='middleLine'></view>
+            </view>
+            <view class='Wid48p textCenter'>
+              <view class='grayCol font12 pr50'>优惠</view>
+              <view class='font30 pr50 redCol'  wx:for="{{validDiscount[priceIndex]}}">
+                <view wx:if="item.isCheck == 1">
+                  {{item.discount}}
+                </view>
+              </view>
+            </view>
+          </view>
+      </swiper-item>
+    </swiper>
 </view>
