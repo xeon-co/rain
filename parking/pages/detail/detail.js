@@ -7,10 +7,16 @@ Page({
   data: {
     carInfo:[{carCode:"123456", storeName:"君尚", 
     parkRule:[{msg:"123"}, {msg:"1234"},{msg:"12345"}]},
-    {carCode:"123456", storeName:"宝体", 
+    {carCode:"123456", storeName:"宝体", discount:"132",
     parkRule:[{msg:"123"}, {msg:"1234"},{msg:"12345"}]}],
     hour:["2","0"],
     min:["56","00"],
+    validDiscount:[
+      { discount:"10.0", discountPrice:"10.0",msg:"", isCheck:true},
+      { discount:"11.0", discountPrice:"11.0",msg:"", isCheck:false},
+      { discount:"12.0", discountPrice:"12.0",msg:"", isCheck:false},
+      { discount:"13.0", discountPrice:"13.0",msg:"", isCheck:false}
+    ],
     // 控制优惠弹窗弹出参数
     actionSheetHidden:true,
     // 控制客服电话弹窗弹出参数
